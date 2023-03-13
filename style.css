@@ -1,0 +1,62 @@
+body {
+	background-color: #000; /* couleur du fond */
+	font-family: Arial, sans-serif; /* police utilisé */
+	color: #fff; /*couleur du txt */
+}
+
+.calculator { /* div pour l'affichage de toute la calculatrice */
+	background-color: #333; /* couleur du fond */
+	border: 5px solid #444; /* la bordure autour de la calculatrice */
+	border-radius: 15px; /* arrondir la div */
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5); /* ajoute des ombres à l'élément */
+	width: 350px; /* hauteur de la calculatrice */
+	margin: 50px auto; /* afin de centrer la calculatrice */
+	padding: 20px; /* marge intérieur */
+	box-sizing: border-box;
+}
+
+.display { /* div servant à l'affichage */
+	background-color: #222; /* couleur du fond */
+	height: 70px; /* hauteur du display */
+	border-radius: 10px; /* arrondir le display */
+	margin-bottom: 30px; /*la place sous le display*/
+	padding: 10px; /* marge intérieur */
+	box-sizing: border-box;
+	text-align: right; /* texte aligné à droite */
+	font-size: 30px; /* taille du texte */
+}
+
+.button-row { /* ligne de boutons */
+	margin-bottom: 10px; /* écart entre les boutons */
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+}
+
+.button { /* gérer tout les boutons */
+	background-color: #666;/* couleur du fond */
+	color: #fff; /*couleur du txt */
+	width: 60px; /* largueur */
+	height: 60px; /* hauteur */
+	border-radius: 30px; /* arrondir le display */
+	border: none; /* bordure */
+	font-size: 24px; /* taille du texte */ 
+	margin-right: 20px; 
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+	box-sizing: border-box;
+}
+
+.op {
+	background-color: #ff9500; /* couleur opérateur */
+}
+
+.ac {
+	background-color: #ff3b30; /* couleur bouton ac */
+}
+
+p {
+	margin: 0;
+    font-weight: 700;
+}
+
