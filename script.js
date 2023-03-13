@@ -17,16 +17,16 @@ function insert(num) {
        return; // Empêcher l'utilisateur d'ajouter un autre caractère
      }
 
-     display.innerHTML += num;
+     display.innerHTML += num; /* ajoute le num au display */
 }
 
 function clearDisplay() {
-    display.innerHTML = "";
+    display.innerHTML = ""; /* efface tout les caractères */
 }
 
 function backspace() {
     if(!isResultDisplayed){
-        display.innerHTML = display.innerHTML.slice(0, -1);
+        display.innerHTML = display.innerHTML.slice(0, -1); /*extrait tous les caractères de la chaîne*/
     }
 }
 
