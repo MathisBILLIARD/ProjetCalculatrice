@@ -1,5 +1,6 @@
 let display = document.getElementById("result");
 let isResultDisplayed = false;
+let previousCalcul = [];
 const MAX_DISPLAY_LENGTH = 16;
 
 // le but remplacer les fonction js en les intégrant dans la class 
@@ -8,7 +9,6 @@ class BaseCalculator{
     constructor() {  
         display = document.getElementById("result"); // initialiser la propriété "display" de l'objet "BaseCalculator"
     }
-
 
     insert(num) {
         if (isResultDisplayed) { // si il y a un calcul précédent terminé 
@@ -24,27 +24,40 @@ class BaseCalculator{
             return; // Empêcher l'utilisateur d'ajouter un autre caractère
         }
 
-        display.innerHTML += num; /* ajoute le num au display */
+        display.innerHTML += num; // ajoute le num au display 
     }
 
 
     clearDisplay() {
-        display.innerHTML = ""; /* efface tout les caractères */
+        display.innerHTML = ""; // efface tout les caractères 
     }   
   
     backspace() {
         if(!isResultDisplayed){
-            display.innerHTML = display.innerHTML.slice(0, -1); /*extrait tous les caractères de la chaîne et renvoie sans la derniere caractere*/
+            display.innerHTML = display.innerHTML.slice(0, -1); //extrait tous les caractères de la chaîne et renvoie sans la derniere caractere
         }
     }
 
     calculate() {
-        try { /* innerHTML permet d'accéder au contenu HTML d'un élément et de modifier son contenu.*/
-            display.innerHTML = eval(display.innerHTML); /*  eval() est une fonction qui évalue une chaîne de caractères en tant que code JavaScript exécutable. */
-        } catch (error) { /* try catch essaye d'executer la ligne sinn renvoie error */
+        try { // innerHTML permet d'accéder au contenu HTML d'un élément et de modifier son contenu.
+            display.innerHTML = eval(display.innerHTML); //  eval() est une fonction qui évalue une chaîne de caractères en tant que code JavaScript exécutable. 
+        } catch (error) { // try catch essaye d'executer la ligne sinn renvoie error 
             display.innerHTML = "Error";
         }
-        isResultDisplayed = true; /* informe qu'un calcul a été exécuter afin d'effacer après*/
+        previousCalcul.push(display.innerHTML);
+        console.log(previousCalcul);
+        isResultDisplayed = true; // informe qu'un calcul a été exécuter afin d'effacer après
+
+    }
+
+    historyCalcul(){
+        this.clearDisplay();
+        if(previousCalcul.length != 0){
+            display.innerHTML = previousCalcul[previousCalcul.length -1];
+            previousCalcul.pop();
+        }
+     
+        console.log(previousCalcul);  
     }
 }
 
