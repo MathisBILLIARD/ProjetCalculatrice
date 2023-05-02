@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculatrice</title>
+	<link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+	<div class="calculator">
+		<div class="display">
+			<p id="result"></p>
+		</div>
+		<div class="button-row">
+			<button class="button ac" onclick="Calculator.clearDisplay()">C</button>
+			<button class="button" onclick="Calculator.backspace()">&larr;</button>
+			<button class="button" onclick="Calculator.insert('.')">.</button>
+			<button class="button op" onclick="Calculator.insert('/')">/</button>
+		</div>
+		<div class="button-row">
+			<button class="button" onclick="Calculator.insert('7')">7</button>
+			<button class="button" onclick="Calculator.insert('8')">8</button>
+			<button class="button" onclick="Calculator.insert('9')">9</button>
+			<button class="button op" onclick="Calculator.insert('*')">*</button>
+		</div>
+		<div class="button-row">
+			<button class="button" onclick="Calculator.insert('4')">4</button>
+			<button class="button" onclick="Calculator.insert('5')">5</button>
+			<button class="button" onclick="Calculator.insert('6')">6</button>
+			<button class="button op" onclick="Calculator.insert('-')">-</button>
+		</div>
+		<div class="button-row">
+			<button class="button" onclick="Calculator.insert('1')">1</button>
+			<button class="button" onclick="Calculator.insert('2')">2</button>
+			<button class="button" onclick="Calculator.insert('3')">3</button>
+			<button class="button op" onclick="Calculator.insert('+')">+</button>
+		</div>
+		<div class="button-row">
+			<button class="button" onclick="Calculator.insert('0')">0</button>
+			<button class="button" onclick="Calculator.insert('(')">(</button>
+            <button class="button" onclick="Calculator.insert(')')">)</button>
+			<button class="button op" onclick="Calculator.calculate()">=</button>
+		</div>
+
+	</div>
+
+	<button class="history" onclick="Calculator.historyCalcul()">HISTORY</button>
+	
+
+	<script src="/script.js"></script> <!-- lié le script js on lancera les fonctions grace au onclick-->
+</body>
+</html>

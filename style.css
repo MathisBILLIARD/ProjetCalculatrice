@@ -51,12 +51,24 @@ body {
 	background-color: #ff9500; /* couleur opérateur */
 }
 
+.history {
+	background-color: #ff0000;
+	width: 200px; /* largueur */
+	height: 60px; /* hauteur */
+	margin-left: 44.6%;
+}
+
 .ac {
 	background-color: #ff3b30; /* couleur bouton ac */
+}
+
+.button:hover .op:hover .ac:hover {
+
+    background-color: #fff;
+    color: #000;
 }
 
 p {
 	margin: 0;
     font-weight: 700;
 }
-
