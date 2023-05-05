@@ -1,6 +1,6 @@
 import { BaseEntity, Column, Entity, PrimaryGeneratedColumn , CreateDateColumn } from 'typeorm';
 
-@Entity('calculatrice')
+@Entity('calculatrice') // envoie bdd
 export class Succes extends BaseEntity {
 
     @PrimaryGeneratedColumn()

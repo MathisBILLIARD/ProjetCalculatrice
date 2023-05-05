@@ -2,7 +2,7 @@ import { Body, Controller, Get, Post } from '@nestjs/common';
 import { SuccesService } from './succes.service';
 
 
-//localhost:3000/succes
+//localhost:3000/calculatrice
 @Controller('calculatrice')
 export class SuccesController {
     constructor(private readonly succesService:SuccesService){}
@@ -15,10 +15,9 @@ export class SuccesController {
 
     @Post() // requete POST 
     createSucces(
-        @Body('id') id: number,
         @Body('timeTakenMs') timeTakenMs: number,
         @Body('created_at') created_at: Date,
     ){
-    return this.succesService.createSucces(id,timeTakenMs, created_at)
+    return this.succesService.createSucces(timeTakenMs, created_at)
     }
 }

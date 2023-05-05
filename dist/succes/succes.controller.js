@@ -23,8 +23,8 @@ let SuccesController = class SuccesController {
         console.log('get time');
         return this.succesService.getSucces();
     }
-    createSucces(id, timeTakenMs, created_at) {
-        return this.succesService.createSucces(id, timeTakenMs, created_at);
+    createSucces(timeTakenMs, created_at) {
+        return this.succesService.createSucces(timeTakenMs, created_at);
     }
 };
 __decorate([
@@ -35,11 +35,10 @@ __decorate([
 ], SuccesController.prototype, "getSucces", null);
 __decorate([
     (0, common_1.Post)(),
-    __param(0, (0, common_1.Body)('id')),
-    __param(1, (0, common_1.Body)('timeTakenMs')),
-    __param(2, (0, common_1.Body)('created_at')),
+    __param(0, (0, common_1.Body)('timeTakenMs')),
+    __param(1, (0, common_1.Body)('created_at')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number, Number, Date]),
+    __metadata("design:paramtypes", [Number, Date]),
     __metadata("design:returntype", void 0)
 ], SuccesController.prototype, "createSucces", null);
 SuccesController = __decorate([

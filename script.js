@@ -77,23 +77,26 @@ class BaseCalculator{
 
 
 
-	const url = 'http://localhost:3000/calculatrice';
-	const dataraw = {
-	"timeTakenMS": timeTaken,
-	"created_at" : dateLocale
-	};
-	var xhr = new XMLHttpRequest();
-	xhr.open("POST", url);
-	xhr.withCredentials = false;
-	xhr.setRequestHeader("Content-Type", "application/json");
-	xhr.onreadystatechange = function () {
-    	if (xhr.readyState === 4 && xhr.status === 200) {
-        	console.log("Data sent successfully");
-    	} else if (xhr.readyState === 4 && xhr.status !== 200) {
-        	console.error("Error sending data:", xhr.statusText);
-    	}
-	};
-	xhr.send(JSON.stringify(dataraw));
+			var myHeaders = new Headers();
+			myHeaders.append("Content-Type", "application/json");
+			
+			var raw = JSON.stringify({
+			  "id": 1,
+			  "timeTakenMs": timeTaken,
+			  "created_at": dateLocale,
+			});
+			
+			var requestOptions = {
+			  method: 'POST',
+			  headers: myHeaders,
+			  body: raw,
+			  redirect: 'follow'
+			};
+			
+			fetch("http://localhost:3000/calculatrice", requestOptions)
+			  .then(response => response.text())
+			  .then(result => console.log(result))
+			  .catch(error => console.log('error', error));
 }
 }
 let Calculator = new BaseCalculator(); // instancier la class

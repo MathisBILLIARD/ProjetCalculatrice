@@ -13,9 +13,8 @@ export class SuccesService {
         private readonly succesRepository: Repository<Succes>,
     ) {}
     
-    async createSucces(id: number, timeTakenMs: number, created_at: Date): Promise<Succes> {
+    async createSucces(timeTakenMs: number, created_at: Date): Promise<Succes> {
         const newSucces = new Succes();
-        newSucces.id = id;
         newSucces.timeTakenMs = timeTakenMs;
         newSucces.created_at = created_at;
         return this.succesRepository.save(newSucces);

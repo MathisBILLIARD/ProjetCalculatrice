@@ -21,9 +21,8 @@ let SuccesService = class SuccesService {
     constructor(succesRepository) {
         this.succesRepository = succesRepository;
     }
-    async createSucces(id, timeTakenMs, created_at) {
+    async createSucces(timeTakenMs, created_at) {
         const newSucces = new succes_entity_1.Succes();
-        newSucces.id = id;
         newSucces.timeTakenMs = timeTakenMs;
         newSucces.created_at = created_at;
         return this.succesRepository.save(newSucces);

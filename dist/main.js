@@ -4,6 +4,10 @@ const core_1 = require("@nestjs/core");
 const app_module_1 = require("./app.module");
 async function bootstrap() {
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
+    const corsOption = {
+        origin: ['http://127.0.0.1:5500']
+    };
+    app.enableCors(corsOption);
     await app.listen(3000);
 }
 bootstrap();
